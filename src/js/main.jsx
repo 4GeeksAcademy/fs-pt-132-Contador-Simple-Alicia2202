@@ -17,7 +17,6 @@ const root =ReactDOM.createRoot(document.getElementById('root'))
 
 setInterval(() => {
   timer ++
-  console.log(timer)
   timer == 1000000 ? timer = 0 : timer ++
   root.render(
     <React.StrictMode>

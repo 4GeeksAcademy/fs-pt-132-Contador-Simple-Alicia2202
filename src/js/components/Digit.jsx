@@ -7,9 +7,8 @@ const Digit = ({ num }) => {
 
             <div className="card-body">
 
-                {/* <div className="d-inline"> */}
                 {num}
-                {/* </div> */}
+               
             </div>
         </div>
     )

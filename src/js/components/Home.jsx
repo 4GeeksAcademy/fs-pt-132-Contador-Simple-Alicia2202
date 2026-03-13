@@ -6,29 +6,23 @@ import Digit from "./Digit";
 //create your first component
 const Home = ({ seconds }) => {
 
-	const digits = seconds.toString().padStart(6, "0")
-
+	const digits = (seconds.toString().padStart(6, "0")).split("")
+	
 	return (
 		<div className="container vh-100 d-flex  justify-content-center align-items-center">
-
-			<div className="p-2">
-				<Digit num={digits[0]} />
+			<div className="p-2 iconoreloj">
+				<Digit num={<i className="fa-regular fa-clock"></i>} />
 			</div>
-			<div className="p-2">
-				<Digit num={digits[1]} />
-			</div>
-			<div className="p-2">
-				<Digit num={digits[2]} />
-			</div>
-			<div className="p-2">
-				<Digit num={digits[3]} />
-			</div>
-			<div className="p-2">
-				<Digit num={digits[4]} />
-			</div>
-			<div className="p-2">
-				<Digit num={digits[5]} />
-			</div>
+			{
+				digits.map((digit,i) => {
+					return (
+						<div  key={i} className="p-2">
+							<Digit num={digit} />
+						</div>
+					)
+				})
+			}
+			
 
 		</div>
 	);
