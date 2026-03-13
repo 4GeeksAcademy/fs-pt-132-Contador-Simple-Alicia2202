@@ -11,8 +11,17 @@ import '../styles/index.css'
 // components
 import Home from './components/Home';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
+let timer = 0
+
+const root =ReactDOM.createRoot(document.getElementById('root'))
+
+setInterval(() => {
+  timer ++
+  console.log(timer)
+  timer == 1000000 ? timer = 0 : timer ++
+  root.render(
+    <React.StrictMode>
+    <Home seconds={timer}/>
   </React.StrictMode>,
 )
+},1000)

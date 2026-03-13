@@ -1,26 +1,35 @@
 import React from "react";
+import Digit from "./Digit";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-            
+const Home = ({ seconds }) => {
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+	const digits = seconds.toString().padStart(6, "0")
+
+	return (
+		<div className="container vh-100 d-flex  justify-content-center align-items-center">
+
+			<div className="p-2">
+				<Digit num={digits[0]} />
+			</div>
+			<div className="p-2">
+				<Digit num={digits[1]} />
+			</div>
+			<div className="p-2">
+				<Digit num={digits[2]} />
+			</div>
+			<div className="p-2">
+				<Digit num={digits[3]} />
+			</div>
+			<div className="p-2">
+				<Digit num={digits[4]} />
+			</div>
+			<div className="p-2">
+				<Digit num={digits[5]} />
+			</div>
+
 		</div>
 	);
 };
